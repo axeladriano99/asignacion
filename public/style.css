@@ -1,0 +1,7 @@
+.fecha{
+    display: flex;
+}
+.fecha input{
+    margin: 16px;
+
+}
