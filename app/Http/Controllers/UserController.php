@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->where('estado', '=', 1);
+        $users = User::all();
         return view('user.index',compact('users'));
     }
 
@@ -118,7 +118,12 @@ class UserController extends Controller
         //optener usuario ingresado
         $userId = Auth::id();
         $usuario = User::find($id);
-        $usuario->estado = 2;
+        if($usuario->estado == 1){
+            $usuario->estado =2;
+        }
+        else{
+            $usuario->estado=1;
+        }
         $usuario->save();
         return redirect('users')
             ->with('success', 'Usuario eliminado correctamente');

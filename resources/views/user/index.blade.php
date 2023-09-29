@@ -46,6 +46,7 @@
                                             <th>Dni</th>
                                             <th>Cargo</th>
                                             <th>Area</th>
+                                            <th> Estado</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -59,8 +60,9 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->DNI }}</td>
                                                 <td>{{ $user->cargo }}</td>
-                                                <td>{{ $user->idEstado }}</td>
                                                 <td>{{ $user->area->nombre }}</td>
+                                                <td>{{$user->estado==1 ?'activo' :'inactivo'}}
+                                                
                                                 <td>
                                                     <a class="btn btn-sm btn-success"
                                                         href="{{ route('users.edit', $user->id) }}"><i
